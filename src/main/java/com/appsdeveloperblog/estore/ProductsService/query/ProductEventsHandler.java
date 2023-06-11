@@ -1,15 +1,14 @@
 package com.appsdeveloperblog.estore.ProductsService.query;
 
+import com.appsdeveloperblog.estore.ProductsService.core.data.ProductEntity;
+import com.appsdeveloperblog.estore.ProductsService.core.data.ProductsRepository;
+import com.appsdeveloperblog.estore.ProductsService.core.events.ProductCreatedEvent;
+import com.appsdeveloperblog.estore.sagacoreapi.events.ProductReservedEvent;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.messaging.interceptors.ExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
-
-import com.appsdeveloperblog.estore.ProductsService.core.data.ProductEntity;
-import com.appsdeveloperblog.estore.ProductsService.core.data.ProductsRepository;
-import com.appsdeveloperblog.estore.ProductsService.core.events.ProductCreatedEvent;
-import com.appsdeveloperblog.estore.core.events.ProductReservedEvent;
 
 @Component
 @ProcessingGroup("product-group")

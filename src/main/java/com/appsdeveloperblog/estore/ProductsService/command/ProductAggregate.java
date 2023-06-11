@@ -1,7 +1,8 @@
 package com.appsdeveloperblog.estore.ProductsService.command;
 
-import java.math.BigDecimal;
-
+import com.appsdeveloperblog.estore.ProductsService.core.events.ProductCreatedEvent;
+import com.appsdeveloperblog.estore.sagacoreapi.commands.ReserveProductCommand;
+import com.appsdeveloperblog.estore.sagacoreapi.events.ProductReservedEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -9,9 +10,7 @@ import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.BeanUtils;
 
-import com.appsdeveloperblog.estore.ProductsService.core.events.ProductCreatedEvent;
-import com.appsdeveloperblog.estore.core.commands.ReserveProductCommand;
-import com.appsdeveloperblog.estore.core.events.ProductReservedEvent;
+import java.math.BigDecimal;
 
 @Aggregate
 public class ProductAggregate {
